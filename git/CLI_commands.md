@@ -1,7 +1,5 @@
 # (01-15) remote
 
----
-
 ```python
 git remote add origin [<https://github.com/ririro93/first-git.git>]
 ```
