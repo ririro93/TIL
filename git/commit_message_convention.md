@@ -1,4 +1,4 @@
-# (01-15 ) git commit message conventions
+# git commit message conventions
 
 | **Type명** | **설명**                                                     |
 | ---------- | ------------------------------------------------------------ |
