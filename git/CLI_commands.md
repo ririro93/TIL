@@ -68,3 +68,15 @@
 
   - `git push origin master`
 - commit history를 원격 저장소에 업로드
+
+
+
+### clone
+
+- `git clone` 첨에 한번에 다 가져올 때 쓰는거
+
+
+
+### pull
+
+- `git pull <origin> <master>` 업데이트 된 내용도 다 가져와줘
