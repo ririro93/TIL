@@ -4,6 +4,8 @@
 
 - 리스트에서 가장 작거나 가장 큰 수를 pop 할 때 씀
 - `heapq.heappush(<list>, ele)` 랑 `heapq.heappop(<list>, ele)` 둘다 O(logn) time complexity
+- maxheap을 쓰고싶으면 각 element에 -1을 곱해서 heappush 하면 됨
+  - heapppop 할 때 -1 곱해서 쓰면 됨
 
 
 
