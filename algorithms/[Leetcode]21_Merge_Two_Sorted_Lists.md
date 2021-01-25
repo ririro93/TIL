@@ -1,10 +1,9 @@
 # 01-25 : [Leetcode] 21. Merge Two Sorted Lists
 
-<details>
-<summary>Problem</summary>
+<details open>
+<summary>문제</summary>
 <p>
 Merge two sorted linked lists and return it as a **sorted** list. The list should be made by splicing together the nodes of the first two lists.
-![img](https://assets.leetcode.com/uploads/2020/10/03/merge_ex1.jpg)
 
 **Example 1:**
 
@@ -37,7 +36,7 @@ Output: [0]
 
 
 <details>
-<summary>my solve</summary>
+<summary>1st solve</summary>
 
 ```python
 # Definition for singly-linked list.
@@ -81,5 +80,46 @@ class Solution:
             curr = node
         return start
 ```
-</details/
+</details/>
 
+<details>
+<summary>2nd solve</summary>
+
+```python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
+        # dummy to point to head and tail to point to last node
+        dummy = tail = ListNode()
+        
+        # continue until one is empty
+        while l1 and l2:
+            if l1.val < l2.val:
+                tail.next = l1
+                l1 = l1.next
+            else:
+                tail.next = l2
+                l2 = l2.next
+            tail = tail.next
+            
+        # if either ended or was empty from beginning 
+        tail.next = l1 or l2
+        return dummy.next  
+```
+</details/>
+
+## 배운 점
+- 새로운 linked list를 생성할 때는 시작노드인 dummy node와 끝 노드인 tail node 를 미리 생성해두고 진행하면 편하다.
+- in-place algorithm : 인풋 이외의 새로운 메모리를 필요로 하지 않는 코드
+  ex). reversing an array
+    ```python
+    def reverseArray(arr, n):
+        for i in range(0, int(n/2)):
+            arr[i], arr[n-i-1] = arr[n-i-1], arr[i]
+        return arr
+    ```
+    
