@@ -36,7 +36,8 @@ Output: [0]
 
 
 
-# My 1st solve
+<details>
+<summary>my solve</summary>
 
 ```python
 # Definition for singly-linked list.
@@ -80,4 +81,5 @@ class Solution:
             curr = node
         return start
 ```
+</details/
 
