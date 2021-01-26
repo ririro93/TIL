@@ -1,11 +1,11 @@
-# Knapsack Problem
+# [baekjoon]12865_Knapsack Problem
 
 > K무게를 견딜 수 있는 가방에 N개의 물건을 집어넣는 문제
 
 각 물건은 무게W 와 가치V를 갖는데 가방에 최대가치를 내는 조합으로 물건을 담기
 
-<details>
-<summary>1st 풀이</summary>
+<details open>
+<summary>1st 풀이: 본 무게들 체크해가면서 무게당 최대 가치 업데이트</summary>
 
 - 모든 물건들에 대해 루프를 돌리는데 체크를 한 조합의 무게값들만 저장하는 checked를 만들어서 매번 여기 있는 요소들에만 다음 물품의 무게를 더해봤다
 - 이러면 모든 물건들에 대해 무든 무게가 아닌 지나친 물품에 대해 고려한 무게들만 체크하면 되니까 시간이 줄어들줄 알았다
@@ -54,8 +54,8 @@ print(solve(K))
 ```
 </details>
 
-<details>
-<summary>2nd 풀이</summary>
+<details open>
+<summary>2nd 풀이 : cache 이용해서 모든 무게에 대한 최대가치 모든 물건에 대해 </summary>
 
 > 1차원 배열의 cache를 이용해 각 물품을 사용할지 말지 보면서 각 무게의 최대 가치값 갱신하기
 
@@ -88,8 +88,8 @@ print(cache[-1])
         
 </details>
 
-<details>
-<summary>3rd 풀이</summary>
+<details open>
+<summary>3rd 풀이 : 1st 풀이를 딕셔너리 사용해서</summary>
 
 > 고수님 풀이 참고해서 따라해본 dictionary 사용한 풀이
 - 빠르다
