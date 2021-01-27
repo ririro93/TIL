@@ -2,7 +2,7 @@
 
 ## 문제 유형
 - 가장 일반적인 0-1 배낭 문제
-[[백준] 12865](https://github.com/ririro93/algorithm_probs/blob/master/new_baek/4th_week/12865_dict.py)
+[[백준] 12865](https://github.com/ririro93/algorithm_probs/blob/master/new_baek/4th_week/12865.md)
 
 
 
