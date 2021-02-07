@@ -53,13 +53,19 @@
 ## docker volume
 > 내가 만든 컨테이너에 있는 db의 데이터를 저장하고 싶으면?
 
-- 컨테이너를 만들 때 volume 을 mount 하면서 만든다 **Volume mounting**
-- `docker volume create data_volume` 
+**Volume mounting**
+- 컨테이너를 만들 때 volume 을 mount 하면서 만든다 
+- `docker volume create <volume-name>` : named volume
 - -> `docker run -v data_volume:/var/lib/mysql mysql`
 - -> 이름 없는 volume을 mount 하려 하면 새로 생성해준다
-- **bind mount**:
+
+**bind mount**:
 - -> `docker run -v /data/--- :/var/lib/mysql mysql` : 이렇게 경로 지정해서 이미 있는 dir를 연결 시킨다
 - -> `--mount type=bind, source=/, target=/` : 이렇게도 실행 가능
+- `docker volume ls`
+- `docker volume inspect`
+
+
 
 
 
