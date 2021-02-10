@@ -11,3 +11,20 @@ Bring down the development containers (and the associated volumes with the -v fl
 (여기다는 gunicorn 쓰고 개발 때는 그냥 django development server 쓰고) <br>
 `docker-compose -f docker-compose.prod.yml up -d --build` <br>
 --build flag는 먼저 이미지 build하고 컨테이너 말들어라 이말
+
+<br>
+
+## using volumes
+On the first invocation of docker-compose up the volume will be created. *The same volume will be reused on following invocations.*
+```
+version: "3.9"
+services:
+  frontend:
+    image: node:lts
+    volumes:
+      - myapp:/home/node/app
+volumes:
+  myapp:
+```
+
+A volume may be created directly outside of compose with `docker volume create` and then referenced inside docker-compose.yml as follows:

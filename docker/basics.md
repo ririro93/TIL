@@ -52,23 +52,37 @@
 
 ## docker volume
 > 내가 만든 컨테이너에 있는 db의 데이터를 저장하고 싶으면?
+- volume이랑 mount를 대충 혼용해서 쓰고있었는데 using a volume하고 bind mounting은 많이 다른거였다
+- volume mounting이란 말은 없다 [docker docs](https://docs.docker.com/storage/volumes/)
+- 이 부분 다시 정리하기
+- 일단 bind mount를 쓰면 윈도우 파일을 컨테이너에서 쓰기 때문에 느리다
 
-**Volume mounting**
-- 컨테이너를 만들 때 volume 을 mount 하면서 만든다 
+- -v , --mount 사용가능한데 초보자는 --mount를 쓰도록 하자
+
+**-v or --volume**: Consists of three fields, separated by colon characters (:). The fields must be in the correct order, and the meaning of each field is not immediately obvious.
+- In the case of named volumes, the first field is the name of the volume, and is unique on a given host machine. For anonymous volumes, the first field is omitted.
+- The second field is the path where the file or directory are mounted in the container.
+- The third field is optional, and is a comma-separated list of options, such as ro. These options are discussed below.
+
+**--mount**: Consists of multiple key-value pairs, separated by commas and each consisting of a <key>=<value> tuple. The --mount syntax is more verbose than -v or --volume, but the order of the keys is not significant, and the value of the flag is easier to understand.
+- The type of the mount, which can be bind, volume, or tmpfs. This topic discusses volumes, so the type is always volume.
+- The source of the mount. For named volumes, this is the name of the volume. For anonymous volumes, this field is omitted. May be specified as source or src.
+- The destination takes as its value the path where the file or directory is mounted in the container. May be specified as destination, dst, or target.
+- The readonly option, if present, causes the bind mount to be mounted into the container as read-only.
+- The volume-opt option, which can be specified more than once, takes a key-value pair consisting - of the option name and its value.
+
+~~**Volume mounting**~~
+- ~~컨테이너를 만들 때 volume 을 mount 하면서 만든다~~
 - `docker volume create <volume-name>` : named volume
 - -> `docker run -v data_volume:/var/lib/mysql mysql`
-- -> 이름 없는 volume을 mount 하려 하면 새로 생성해준다
+- ~~-> 이름 없는 volume을 mount 하려 하면 새로 생성해준다~~
 
 **bind mount**:
+> Bind mounts have limited functionality compared to volumes. When you use a bind mount, a file or directory on the host machine is mounted into a container. The file or directory is referenced by its absolute path on the host machine. By contrast, when you use a volume, a new directory is created within Docker’s storage directory on the host machine, and Docker manages that directory’s contents.
 - -> `docker run -v /data/--- :/var/lib/mysql mysql` : 이렇게 경로 지정해서 이미 있는 dir를 연결 시킨다
 - -> `--mount type=bind, source=/, target=/` : 이렇게도 실행 가능
 - `docker volume ls`
 - `docker volume inspect`
-
-
-
-
-
 
 <br>
 
@@ -94,6 +108,15 @@
 - `run -it --rm-p 6379:6379 "cfe-redis"`: 
 - `-it --rm` this docker container only runs when we want it to and the container will be removed after we’re done runing it.
 - `-p 6379:6379` : expose the port 6379 on our local system AND in our docker container.
+
+<br>
+
+## logs
+- `docker logs --tail 100`: 맨 뒤 100개만 보여줘
+- `docker logs --follow` : real time stream으로 보여줘
+
+<br>
+
 
 ### ENV variables
 - `docker run -e APP_COLOR=blue simple-webapp-color` : APP_COLOR이라는 환경변수를 blue로 넣어주겠다는 뜻

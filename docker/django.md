@@ -1,6 +1,8 @@
 # django
 > [blog](https://testdriven.io/blog/dockerizing-django-with-postgres-gunicorn-and-nginx/)
 [blog2](https://github.com/psycopg/psycopg2/issues/684)
+- docker-compose up -d --build
+  - --build를 넣어줘야지 이미지를 새로 빌드해서 전에 쓰던 db가 반영된다
 
 <br>
 

@@ -12,3 +12,5 @@
 `#!/bin/bash` : 이걸로 시작하는 경우가 많다, bash로 실행시키라는 뜻이라서
 `#!/usr/local/bin/python` : 이런식으로 파일을 파이썬으로 실행시켜라라고도 가능
 
+- Shell scripts are interpreted, not compiled. The shell reads commands from the script line per line and searches for those commands on the system (see Section 1.2), while a compiler converts a program into machine readable form, an executable file - which may then be used in a shell script.
+
