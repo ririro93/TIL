@@ -1,4 +1,5 @@
 # celery
+>[django x celery x redis setup](https://testdriven.io/blog/django-and-celery/)
 
 ## Task Queue
 > 쓰레드나 머신에 작업을 분배하기 위해 쓰이는 장치

@@ -28,3 +28,6 @@ volumes:
 ```
 
 A volume may be created directly outside of compose with `docker volume create` and then referenced inside docker-compose.yml as follows:
+
+## scale
+`--scale celery=3` : 이런 옵션을 주면 한번에 celery container 3개 만들 수 있음
