@@ -36,3 +36,9 @@ in models.py
 
 in views.py
 - `User = get_user_Model()`
+
+<br>
+
+## login with socials
+[medium post](https://whizzoe.medium.com/in-5-mins-set-up-google-login-to-sign-up-users-on-django-e71d5c38f5d5)
+- use django-allauth
