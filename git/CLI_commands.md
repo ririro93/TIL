@@ -59,6 +59,18 @@
 
 - `git commit -m "<commit message>"`
 - staging area 에 있는 파일들을 스냅샷으로 저장
+- -a lets you skip `git add` and automatically stages all tracked files before the commit
+
+  ```
+  git commit -a -m 'message'
+  ```
+- --amend
+  ```
+  $ git commit -m 'Initial commit'
+  $ git add forgotten_file
+  $ git commit --amend
+  ```
+
 
 
 
@@ -80,3 +92,25 @@
 ### pull
 
 - `git pull <origin> <master>` 업데이트 된 내용도 다 가져와줘
+
+### rm
+
+`git rm --cached`
+그냥 `git rm`만 하면 내 local이랑 git 이 tracking 하고 있는 파일이 둘다 없어진다. <br>
+그냥 깃으로 관리하고 있는 파일만 없애고 싶은 경우에는 `git rm --cached`를 하면 내 로컬에서는 파일이 유지된다. -> 실수로 .gitignore 적용 안하고 stage 했을 때 쓸 수 있다.
+
+## branches
+>[git book](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
+
+will try to create a new branch for each feature for practice
+
+```
+git checkout -b <branchName>
+```
+
+this is the same as
+
+```
+git branch <branchName>
+git checkout <branchName>
+```
