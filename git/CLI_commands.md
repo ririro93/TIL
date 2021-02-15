@@ -1,6 +1,7 @@
 # git CLI commands
 
-
+## HEAD
+> 그냥 지금 내가 보고 있는 branch 가르쳐주는거
 
 ## 설정
 
@@ -102,15 +103,23 @@
 ## branches
 >[git book](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
 
-will try to create a new branch for each feature for practice
+- will try to create a new branch for each feature for practice
+  ```
+  git checkout -b <branchName>
+  ```
 
-```
-git checkout -b <branchName>
-```
+  this is the same as
+  ```
+  git branch <branchName>
+  git checkout <branchName>
+  ```
 
-this is the same as
+- deleting a branch after merging with master
+  ```
+  git branch -d <branchName>
+  ```
 
-```
-git branch <branchName>
-git checkout <branchName>
-```
+- checking which branches need to be merged
+  ```
+  git branch --no-merged
+  ```
