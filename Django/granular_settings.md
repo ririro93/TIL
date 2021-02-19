@@ -1,4 +1,4 @@
-# granularisation
+# granular_settings
 
 making settings granular
 - mkdir settings
