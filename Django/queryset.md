@@ -24,3 +24,7 @@ def posts(request):
     post_list = serializers.serialize('json', posts)
     return HttpResponse(post_list, content_type="text/json-comment-filtered")
 ```
+
+## filtering
+- `filter(id=id)` 이건 `filter(id__exact=id)` 랑 같음
+- `filter(id__iexact=id)`라고 하면 대소문자 구분없이 다 찾아줌
