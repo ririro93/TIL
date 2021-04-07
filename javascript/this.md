@@ -15,5 +15,6 @@ function hello(thing) {
 - -> **must bind** instance outside the function to use the instance as this
 - -> ex). `onClick={function(){console.log(this)}.bind(this)}`
 - using arrow function calls -> this refers to the instance function is called on (no binding needed)
+- -> arrow functions don't have their
 - -> ex) `.onClick={() => console.log(this)}`
 

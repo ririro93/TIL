@@ -8,3 +8,4 @@
 3. set `USERNAME_FIELD = 'email'` for CustomUser in `models.py`
 
 ## allauth
+[docs](https://django-allauth.readthedocs.io/en/latest/index.html)

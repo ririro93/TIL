@@ -25,3 +25,16 @@ urlpatterns = [
 ```
 
 - 라우터를 사용해서 url 관리를 한다
+
+## auth
+> django-rest-auth [docs](https://django-rest-auth.readthedocs.io/en/latest/index.html)
+uses Django's Token-based authentication
+- django-rest-auth is heavily dependant on django-allauth
+    - to change config -> change allauth config
+        - ex). to change username field to required=False for signup
+            - set `ACCOUNT_USERNAME_REQUIRED = False`
+
+### problem
+- tried using django token authentication with django-rest-auth but sessions were also created -> no point in using token authentication?
+- -> if designed this way why use tokens in first place
+- -> my settings are incorrect
