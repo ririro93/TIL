@@ -11,6 +11,8 @@
     - -> `many=True` to serialize a queryset not just a single instance
 - serializer model에 어떤 인자를 넣어주고 싶을 때 쓸 수 있는 방법
     - `__init__` method 에서 Meta 클래스를 참조하면서 fields를 가져오기 때문에 
+    - -> **너무 억지로 바꿔주는 방법이어서 내부적으로 무슨 문제가 생길지 모름 -> 비추**
+    - -> serializer을 하나 더 만드는게 마음 편하긴 하다
     ```python
     class ChoiceSerializer(serializers.ModelSerializer):
         author = serializers.StringRelatedField()
