@@ -169,3 +169,6 @@ function Counter({initialCount}) {
 ## useReducer
 > When setting a state variable depends on the current value of another state variable, you might want to try replacing them both with useReducer.
 [bookmark](https://overreacted.io/a-complete-guide-to-useeffect/#decoupling-updates-from-actions)
+
+## fetching data
+> [blog](https://www.robinwieruch.de/react-hooks-fetch-data)
