@@ -29,3 +29,16 @@
 
 ## reactivity in depth
 - For every **directive / data binding** in the template, there will be a corresponding watcher object, which records any properties “touched” during its evaluation as dependencies. Later on when a dependency’s setter is called, it triggers the watcher to re-evaluate, and in turn causes its associated directive to perform DOM updates.
+
+## watch
+- give option `deep` for objects and lists
+```js
+watch: {
+    todosApp: {
+        deep: true,
+        handler: function () {
+        console.log('diff')
+        }
+    }
+}
+```
