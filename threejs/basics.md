@@ -1,4 +1,8 @@
 # Basics
+> [docs](https://threejs.org/docs/index.html#manual/en/introduction/Installation) <br>
+> [fundamentals](https://threejsfundamentals.org/threejs/lessons/threejs-fundamentals.html) <br>
+> [QnA forum](https://discourse.threejs.org/)
+
 1. import THREE from cdn
 2. create scene, camera, object, renderer
 4. render with setAnimationLoop
