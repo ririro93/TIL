@@ -26,6 +26,7 @@
 
 ## transition-group, js hooks
 - gsap can be used easily with js hooks
+- [CAUTION] : keys have to be unique values -> using idx can cause problems if elements are pushed into Array from the front!
 ```html
 <template>
     <transition-group 
